@@ -1,6 +1,6 @@
 const roteador = require('express').Router();
 
-roteador.use('/auxbackend/pessoas', (req, res) =>  {
+roteador.use('/', (req, res) =>  {
     res.send('Ok');
 });
 
