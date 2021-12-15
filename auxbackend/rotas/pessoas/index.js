@@ -1,7 +1,11 @@
 const roteador = require('express').Router();
+const database = require('./data');
 
-roteador.use('/auxbackend/pessoas', (req, res) =>  {
-    res.send('Ok');
+roteador.use('/', async (req, res) =>  {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    const resultados = await database();
+    console.log(resultados);
+    res.send(resultados);
 });
 
 module.exports = roteador;
